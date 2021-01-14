@@ -8,6 +8,7 @@
     cursor: pointer;
     width: 100%;
     letter-spacing: 0.1rem;
+    font-size: 1rem !important;
 
 }
 
@@ -18,4 +19,14 @@
 .paymentForm {
     max-width: 400px;
     margin: 0 auto;
+}
+
+.tshirt {
+    max-width: 100%;
+}
+
+.header {
+    color: #006699;
+    font-weight: bold;
+    font-size: 2rem !important;
 }
