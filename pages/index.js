@@ -1,5 +1,9 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
+import {loadStripe} from '@stripe/stripe-js';
+import {Elements} from '@stripe/react-stripe-js'
+
+const stripePromiseKey = loadStripe(process.env.STRIPE_PUBLIC_KEY);
 
 export default function Home() {
   return (
@@ -9,9 +13,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-          <h1>Hello Next.js</h1>
-      </main>
+      <Elements stripe={stripePromiseKey} className={styles.main}>
+          <h1>test</h1>
+      </Elements>
     </div>
   )
 }
