@@ -1,0 +1,23 @@
+.info {
+    text-align: center;
+}
+
+.heading {
+    color: #006699;
+}
+
+.appInfo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.link {
+    text-decoration: none;
+    color: azure;
+}
+
+.button {
+    background-color: #9c0b6c;
+    padding: 0.35rem 0.85rem;
+    border-radius: 13px;
+}
