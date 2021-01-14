@@ -1,9 +1,10 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css';
 import {loadStripe} from '@stripe/stripe-js';
-import {Elements} from '@stripe/react-stripe-js'
+import {Elements} from '@stripe/react-stripe-js';
+import CheckoutForm from '../components/CheckoutForm';
+import styles from '../styles/Home.module.css';
 
-const stripePromiseKey = loadStripe(process.env.STRIPE_PUBLIC_KEY);
+const stripePromiseKey = loadStripe('pk_test_51I9UfeADWoS2rxjhz0dvApq8lDOJnebemWODbL5ZUniO2nKo2cZOAaHBCghfTwIGhpy9nUQLKML4vhz1Kwd2xXu600sDWAphHL');
 
 export default function Home() {
   return (
@@ -13,8 +14,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Elements stripe={stripePromiseKey} className={styles.main}>
-          <h1>test</h1>
+      <Elements stripe={stripePromiseKey} >
+          <CheckoutForm />
       </Elements>
     </div>
   )
