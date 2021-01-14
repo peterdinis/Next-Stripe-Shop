@@ -1,0 +1,21 @@
+.payment {
+    margin-top: 1rem;
+    margin-left: 2px;
+    color: #eee;
+    background: #1f9e98;
+    padding: 0.35rem 0.85rem;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    letter-spacing: 0.1rem;
+
+}
+
+.payment:hover {
+    outline: none
+}
+
+.paymentForm {
+    max-width: 400px;
+    margin: 0 auto;
+}
