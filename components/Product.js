@@ -6,13 +6,20 @@ export default function Product() {
     const [products, setProducts] = useState(productData);
 
     return (
-        <div>
+        <div className={styles.productsList}>
             {products.map((product) => {
                 return (
-                    <div>
-                        <h2>{product.name}</h2>
-                        <p>{product.price}</p>
-                        <img className={styles.tshirts} src={product.img} />
+                    <div className='card' style={{width: '18rem'}}>
+                        <img className="card-img-top" src={product.img} alt={product.name} />
+                        <div className='card-body'>
+                             <h6 className='card-title'>{product.name}</h6>
+                             <p className='card-text'>
+                                 {product.price}
+                             </p>
+                             <button className={styles.checkout}>
+                                 Checkout
+                             </button>
+                        </div>
                     </div>
                 )
             })}
