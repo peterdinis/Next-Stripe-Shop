@@ -1,6 +1,7 @@
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
 import styles from '../styles/CheckoutForm.module.css';
 import axios from 'axios';
+import ProductsList from './ProductsList';
 
 export default function CheckoutForm({success}) {
     const stripe = useStripe();
@@ -36,6 +37,7 @@ export default function CheckoutForm({success}) {
                 <h2 className={styles.header}>Next.js Tshirt</h2>
                 <h4 className={styles.price}>Price: 3€</h4>
                 <img className={styles.tshirt} src='https://mockup-api.teespring.com/v3/image/N_lzOWHSYHVOeVAgT0B31wcGvEU/480/560.jpg' alt='Tshirt-Image' />
+                <ProductsList />
                 <CardElement />
                     <button type='submit' disabled={!stripe} className={styles.payment}>
                             Pay
