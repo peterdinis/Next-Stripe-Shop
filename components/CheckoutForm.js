@@ -33,7 +33,8 @@ export default function CheckoutForm({success}) {
     return (
         <div className={styles.paymentForm}>
             <form onSubmit={handlePaySubmit}>
-                <h2 className={styles.header}>Price: 6€</h2>
+                <h2 className={styles.header}>Next.js Tshirt</h2>
+                <h4 className={styles.price}>Price: 3€</h4>
                 <img className={styles.tshirt} src='https://mockup-api.teespring.com/v3/image/N_lzOWHSYHVOeVAgT0B31wcGvEU/480/560.jpg' alt='Tshirt-Image' />
                 <CardElement />
                     <button type='submit' disabled={!stripe} className={styles.payment}>
