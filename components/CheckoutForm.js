@@ -1,14 +1,11 @@
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
 import styles from '../styles/CheckoutForm.module.css';
 import axios from 'axios';
-import {ToastContainer, toast} from 'react-toastify';
 
-export default function CheckoutForm() {
+export default function CheckoutForm({success}) {
     const stripe = useStripe();
     const elements = useElements();
 
-    const notify = () => toast.success('Payment was successfull');
-    const errNotify = () => toast.error('Error during payment');
 
     const handlePaySubmit = async e => {
         e.preventDefault();
@@ -19,15 +16,14 @@ export default function CheckoutForm() {
         });
 
         if(!error) {
-            console.log(paymentMethod);
+            const { id } = paymentMethod;
 
             try {
                 const {data} = await axios.post('/api/chargePayment',  {id, amount: 1000});
-                notify();
-
+                console.log(data);
+                success();
             } catch(e) {
                 console.error(e);
-                errNotify();
             }
         }
     }
@@ -43,7 +39,6 @@ export default function CheckoutForm() {
                     <button type='submit' disabled={!stripe} className={styles.payment}>
                             Pay
                     </button>
-                    <ToastContainer />
              </form>
         </div>
     )
